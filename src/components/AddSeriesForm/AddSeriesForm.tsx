@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSeries } from "../../features/useSeries/useSeries";
+import type { SeriesFormData } from "../../types/Series";
 
 export const AddSeriesForm: React.FC = () => {
     const [title, setTitle] = useState('');
@@ -16,15 +17,22 @@ export const AddSeriesForm: React.FC = () => {
             return;
         }
 
-        const newSeries = {
+        const newSeries: SeriesFormData = {
             title: title,
             season: season,
             episode: episode,
             minute: minute,
         }
 
-        addSeries(title, season, episode, minute);
+        addSeries(newSeries);
+
+        setTitle('');
+        setSeason(1);
+        setEpisode(1);
+        setMitune(0);
     }
+
+    console.log(series);
 
     return (
         <form action="/" onSubmit={handleSubmit} className="form">

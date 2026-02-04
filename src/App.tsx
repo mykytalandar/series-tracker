@@ -9,9 +9,8 @@ function App() {
   return (
     <div>
       <h1>Series tracker</h1>
-      <button onClick={() => setModalForm(prev => !prev)}>Добавить</button>
+      <button onClick={() => setModalForm(prev => !prev)}>Добавить сериал</button>
       {modalForm && <AddSeriesForm/>}
-      {/* <AddSeriesForm /> */}
       <SeriesList />
     </div>
   )

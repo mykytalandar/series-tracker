@@ -5,3 +5,5 @@ export interface Series {
     episode: number
     minute: number
 }
+
+export type SeriesFormData = Omit<Series, 'id'>;
