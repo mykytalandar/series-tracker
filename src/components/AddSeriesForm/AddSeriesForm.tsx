@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { useSeries } from "../../features/useSeries/useSeries";
+import { useContext, useState } from "react";
 import type { SeriesFormData } from "../../types/Series";
+import { SeriesContext } from "../../context/SeriesContext";
 
 export const AddSeriesForm: React.FC = () => {
     const [title, setTitle] = useState('');
-    const [season, setSeason] = useState(1)
-    const [episode, setEpisode] = useState(1)
-    const [minute, setMitune] = useState(0);
+    const [season, setSeason] = useState<number | ''>('');
+    const [episode, setEpisode] = useState<number | ''>('');
+    const [minute, setMinute] = useState<number | ''>('');
 
-    const { series, addSeries } = useSeries();
+    const { addSeries } = useContext(SeriesContext);
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -29,10 +29,8 @@ export const AddSeriesForm: React.FC = () => {
         setTitle('');
         setSeason(1);
         setEpisode(1);
-        setMitune(0);
+        setMinute(0);
     }
-
-    console.log(series);
 
     return (
         <form action="/" onSubmit={handleSubmit} className="form">
@@ -46,19 +44,19 @@ export const AddSeriesForm: React.FC = () => {
                 <input
                     type="number"
                     value={season}
-                    onChange={(e) => setSeason(+e.target.value)}
+                    onChange={(e) => setSeason(e.target.value === '' ? '' : +e.target.value)}
                     placeholder="Сезон"
                 />
                 <input
                     type="number"
                     value={episode}
-                    onChange={(e) => setEpisode(+e.target.value)}
+                    onChange={(e) => setEpisode(e.target.value === '' ? '' : +e.target.value)}
                     placeholder="Серия"
                 />
                 <input
                     type="number"
                     value={minute}
-                    onChange={(e) => setMitune(+e.target.value)}
+                    onChange={(e) => setMinute(e.target.value === '' ? '' : +e.target.value)}
                     placeholder="Минута"
                 />
                 <input type="submit" />

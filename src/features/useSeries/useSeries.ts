@@ -10,8 +10,18 @@ export const useSeries = () => {
         setSeries(prev => [...prev, {id: crypto.randomUUID(), ...data}])
     }
 
+    const deleteSeries = (id: string) => {
+        setSeries(prev => prev.filter(seriesItem => seriesItem.id !== id))
+    }
+
+    const updateSeries = (id: string, data: SeriesFormData) => {
+        setSeries(prev => prev.map(seriesItem => seriesItem.id === id ? {...seriesItem, ...data} : seriesItem))
+    }
+
     return {
         series,
         addSeries,
+        deleteSeries,
+        updateSeries,
     }
 }
