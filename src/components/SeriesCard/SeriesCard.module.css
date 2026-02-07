@@ -1,4 +1,77 @@
 .card {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 20px;
+    background-color: #3e3d40;
+    color: black;
+    padding: 15px;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.title {
+    padding: 8px;
+    font-size: 22px;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.text {
+    background-color: #313133;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+.text-value {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.delete-button-wrapper {
+    display: flex;
+    margin-top: 20px;
+}
+
+.input {
+    font-size: 20px;
+    padding: 15px 10px 10px 10px;
+    background-color: #333; 
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.actions-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
 }

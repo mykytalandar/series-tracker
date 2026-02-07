@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.title-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title {
+    font-size: 28px;  
+    line-height: 100%;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+    font-weight: 400;
+}

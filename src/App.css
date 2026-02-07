@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Lexend', sans-serif;
+    color: var(--primary-text-color);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 15px;
+}
+
+input {
+    font-family: inherit;
+    background-color: var(--input-color);
+    border: var(--border);
+}
+
+button {
+    font-family: inherit;
+}
+
+
+
