@@ -19,6 +19,7 @@ body {
     flex-direction: column;
     gap: 20px;
     padding-inline: 15px;
+    margin-bottom: 50px;
 }
 
 input {

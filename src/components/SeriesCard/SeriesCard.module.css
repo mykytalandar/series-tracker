@@ -1,63 +1,80 @@
 .card {
-    border: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
     border-radius: 20px;
-    background-color: #3e3d40;
-    color: black;
-    padding: 15px;
+    background-color: var(--form-color);
+    padding: 20px;
 }
 
 .title-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
 .title {
-    padding: 8px;
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
     color: white;
 }
 
 .content {
     display: flex;
     flex-direction: row;
-    gap: 15px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
 }
 
 .text {
-    background-color: #313133;
-    padding: 5px;
-    border-radius: 10px;
-    color: white;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
 }
 
-.text-value {
-    font-weight: bold;
-    color: #f0f0f0;
+.text:last-child {
+    text-transform: lowercase;
 }
 
+.minute-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
 .delete-button-wrapper {
     display: flex;
     margin-top: 20px;
 }
 
 .input {
-    font-size: 20px;
-    padding: 15px 10px 10px 10px;
-    background-color: #333; 
-    border: 1px solid rgba(105, 105, 105, 0.397);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 12px;
+    border: 1px solid var(--border); 
     border-radius: 10px;
     color: white;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
-    width: 80%;
+    width: 100%;
     margin-top: 10px;
     border-radius: 20px;
 }
@@ -73,5 +90,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    gap: 20px;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }

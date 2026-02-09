@@ -46,6 +46,7 @@ export const AddSeriesForm: React.FC = () => {
           className={styles.input}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Breaking Bad"
+          required
         />
       </label>
 

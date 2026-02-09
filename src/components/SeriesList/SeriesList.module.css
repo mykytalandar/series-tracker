@@ -1,7 +1,23 @@
 .series-list {
+    display: grid;
     margin-top: 20px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.series-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .series-list-title {
-    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.series-count {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
 }

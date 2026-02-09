@@ -6,12 +6,19 @@ import style from "./SeriesList.module.css";
 export const SeriesList: React.FC = () => {
   const { series } = useContext(SeriesContext);
   return (
-    <div className={style['series-list']}>
+    <div className={style["series-list"]}>
       {series.length === 0 ? (
         <p>No series added yet.</p>
       ) : (
         <>
-          <h2 className={style["series-list-title"]}>Series list:</h2>
+          <div className={style["series-list-header"]}>
+            <h2 className={style["series-list-title"]}>Watching</h2>
+            {series.length > 0 && (
+              <span className={style["series-count"]}>
+                {series.length} series
+              </span>
+            )}
+          </div>
           {series.map((seriesItem) => (
             <SeriesCard key={seriesItem.id} series={seriesItem} />
           ))}
