@@ -15,7 +15,12 @@ export const AddSeriesForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!title || !season || !episode || !minute) {
+    if (
+      title.trim() === "" ||
+      season === "" ||
+      episode === "" ||
+      minute === ""
+    ) {
       return;
     }
 
@@ -35,7 +40,7 @@ export const AddSeriesForm: React.FC = () => {
   };
 
   return (
-    <form action="/" onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <h3 className={styles["form-title"]}>ADD SERIES</h3>
       <label htmlFor="title">
         TITLE

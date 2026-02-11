@@ -7,11 +7,11 @@ export function useLocalStorage<T>(key: string, initialValue: T): readonly [
 ] {
     const [value, setValue] = useState(() => {
         try {
-            const savedValue = localStorage.getItem(key)
+            const savedValue = localStorage.getItem(key);
 
             return savedValue === null ? initialValue : JSON.parse(savedValue);
         } catch {
-            return initialValue
+            return initialValue;
         }
     });
 
