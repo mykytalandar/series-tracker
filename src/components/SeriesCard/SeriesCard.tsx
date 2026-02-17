@@ -4,7 +4,8 @@ import { SeriesContext } from "../../context/SeriesContext";
 import style from "./SeriesCard.module.css";
 import { AddButton } from "../AddButton/AddButton";
 import { iconsColor } from "../../types/colors";
-import { Pencil, Trash2 } from "lucide-react";
+import { Check, Clock, Pencil, Trash2, Tv, X } from "lucide-react";
+import { toast } from "react-toastify";
 
 type Props = {
   series: Series;
@@ -42,6 +43,7 @@ export const SeriesCard: React.FC<Props> = ({ series }) => {
   const handleSave = () => {
     updateSeries(series.id, formData as SeriesFormData);
     setIsEditing(false);
+    toast.success("Series updated successfully!");
   };
 
   const handleCancel = () => {
@@ -72,45 +74,16 @@ export const SeriesCard: React.FC<Props> = ({ series }) => {
 
         {!isEditing ? (
           <div className={style.content}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke={iconsColor}
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m17 2-5 5-5-5"></path>
-              <rect width="20" height="15" x="2" y="7" rx="2"></rect>
-            </svg>
+            <Tv size={14} color={iconsColor} />
             <span className={style.text}>s: {series.season}</span>
             <span className={style.text}>e: {series.episode}</span>
             <div className={style["minute-wrapper"]}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={iconsColor}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 6v6l4 2"></path>
-                <circle cx="12" cy="12" r="10"></circle>
-              </svg>
+              <Clock size={14} color={iconsColor} />
               <span className={style.text}>{series.minute}m</span>
             </div>
           </div>
         ) : (
           <form
-            action="/"
             onSubmit={(e) => e.preventDefault()}
             className={style.form}
           >
@@ -151,14 +124,18 @@ export const SeriesCard: React.FC<Props> = ({ series }) => {
               onClick={() => deleteSeries(series.id)}
               className={style.button}
             >
-              <Trash2 size={20} color={iconsColor}/>
+              <Trash2 size={20} color={iconsColor} />
             </button>
           </>
         ) : (
-            <div className={style["actions-wrapper"]}>
-              <AddButton action={handleSave} title="Save" />
-              <AddButton action={handleCancel} title="Cancel" />
-            </div>
+          <div className={style["actions-wrapper"]}>
+            <AddButton action={handleSave} title="Save">
+              <Check size={16} />
+            </AddButton>
+            <AddButton action={handleCancel} title="Cancel">
+              <X size={16} />
+            </AddButton>
+          </div>
         )}
       </div>
     </article>

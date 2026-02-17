@@ -3,6 +3,9 @@ import type { SeriesFormData } from "../../types/Series";
 import { SeriesContext } from "../../context/SeriesContext";
 import styles from "./AddSeriesForm.module.css";
 import { AddButton } from "../AddButton/AddButton";
+import { Dot, Plus } from "lucide-react";
+import { iconsColor } from "../../types/colors";
+import { toast } from "react-toastify";
 
 export const AddSeriesForm: React.FC = () => {
   const [title, setTitle] = useState("");
@@ -39,9 +42,16 @@ export const AddSeriesForm: React.FC = () => {
     setMinute(0);
   };
 
+  const buttonSubmit = () => {
+    toast.success("Series added successfully!");
+  }
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h3 className={styles["form-title"]}>ADD SERIES</h3>
+      <h3 className={styles["form-title"]}>
+        <Dot size={25} color={iconsColor} />
+        ADD SERIES
+      </h3>
       <label htmlFor="title">
         TITLE
         <input
@@ -101,7 +111,9 @@ export const AddSeriesForm: React.FC = () => {
           />
         </label>
 
-        <AddButton type="submit" title="Add" />
+        <AddButton action={buttonSubmit} type="submit" title="Add">
+          <Plus size={18} />
+        </AddButton>
       </div>
     </form>
   );
