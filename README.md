@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Series Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React application for tracking TV series progress.
+It allows users to keep track of the last watched season, episode, and minute for each series.
 
-Currently, two official plugins are available:
+The project focuses on clean component architecture, reusable UI elements, and modern React tooling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
 
-## React Compiler
+[View the live project here](https://mykytalandar.github.io/series-tracker/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Add a new TV series
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Track season, episode, and minute
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Edit existing entries
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Delete series from the list
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Persistent data using LocalStorage
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Toast notifications for user actions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Responsive layout for mobile and desktop
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Clean and reusable component structure
+
+## Tech Stack
+
+### Frontend
+
+- React 19
+
+- TypeScript
+
+- Vite
+
+### UI & Utilities
+
+- lucide-react (icons)
+
+- react-toastify (notifications)
+
+### Tooling
+
+- ESLint
+
+- TypeScript ESLint
+
+- GitHub Pages (deployment)
+
+## Installation
+
+Clone the repository:
+
+`git clone https://github.com/mykytalandar/series-tracker.git`
+
+
+Navigate to the project directory:
+
+`cd series-tracker`
+
+
+Install dependencies:
+
+`npm install`
+
+
+Start the development server:
+
+`npm run dev`
